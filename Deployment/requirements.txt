@@ -1,1 +1,1 @@
-bertopic
+bertopic>=0.11.0
