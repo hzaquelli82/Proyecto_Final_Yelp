@@ -28,3 +28,4 @@ google-api-python-client
 bertopic
 nltk
 google-cloud-bigquery
+db-dtypes
