@@ -4,7 +4,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import google
-from google.cloud import storage
 import os
 import re
 from bertopic import BERTopic
