@@ -36,30 +36,13 @@ modelo_bertopic = BERTopic(n_gram_range=(1, 2), language='english', vectorizer_m
 
 
 # credenciales 
-CREDENTIALS_PATH = '.streamlit/secrets.toml'
+# CREDENTIALS_PATH = '.streamlit/secrets.toml'
 PROJECT_ID = "proyecto-final-439222"  
 
-# Cargar las credenciales desde el archivo JSON
-creds = Credentials.from_service_account_file(CREDENTIALS_PATH)
-
-# Crear el cliente de Google Cloud Storage usando las credenciales
-client = storage.Client(credentials=creds)
-
-# Especifica el nombre del bucket
-bucket_name = "bucket-proyecto-final-1"
-
-# Obtiene un objeto bucket
-bucket = client.bucket(bucket_name)
-
-# Lista los blobs (objetos) dentro del bucket
-blobs = bucket.list_blobs()
-
-for blob in blobs:
-    print(blob.name)
-    
-    
-# Autenticar el cliente
-client = bigquery.Client.from_service_account_json(CREDENTIALS_PATH)
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
+)
+client = bigquery.Client(credentials=credentials)
 
 # Especificar la tabla
 DATASET_ID = "ds_proyecto_nordsee"  # Reemplaza con el ID de tu dataset
