@@ -3,12 +3,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import google
+# import google
 import os
-import re
+# import re
 from bertopic import BERTopic
-import nltk
-from nltk.corpus import stopwords
+# import nltk
+# from nltk.corpus import stopwords
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from google.oauth2 import service_account
@@ -16,9 +16,18 @@ from google.oauth2.service_account import Credentials
 from google.cloud import bigquery
 from PIL import Image
 
+import nltk
+# import os
 
+nltk_data_dir = "./resources/nltk_data_dir/"
+if not os.path.exists(nltk_data_dir):
+    os.makedirs(nltk_data_dir, exist_ok=True)
+nltk.data.path.clear()
+nltk.data.path.append(nltk_data_dir)
+nltk.download("stopwords", download_dir=nltk_data_dir)
+nltk.download('punkt', download_dir=nltk_data_dir)
 # Descargar stopwords si no lo has hecho antes
-nltk.download('stopwords')
+# nltk.download('stopwords')
 
 # Obtener la lista de stopwords en español
 custom_stopwords = stopwords.words('english')
