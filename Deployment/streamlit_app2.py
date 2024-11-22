@@ -8,7 +8,7 @@ import os
 # import re
 from bertopic import BERTopic
 # import nltk
-# from nltk.corpus import stopwords
+from nltk.corpus import stopwords
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from google.oauth2 import service_account
