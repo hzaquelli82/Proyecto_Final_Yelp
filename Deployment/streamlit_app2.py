@@ -71,10 +71,10 @@ df = results.to_dataframe()
 df['time'] = pd.to_datetime(df['time'])
 
 
-imagen = Image.open("logo.jpeg")
+# imagen = Image.open("logo.jpeg")
 
 with st.sidebar:
-    st.image(imagen, use_container_width=True)
+    # st.image(imagen, use_container_width=True)
 
     st.title('Filtros')
         
