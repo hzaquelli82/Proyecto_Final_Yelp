@@ -1,5 +1,6 @@
 numpy==1.26.4
 setuptools>=65
+wheel>=0.37.1
 pandas==2.2.2
 matplotlib==3.9.2
 seaborn==0.13.2
