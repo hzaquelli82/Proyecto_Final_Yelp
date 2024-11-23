@@ -3,21 +3,21 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import google
-from google.cloud import storage
+# import google
 import os
-import re
+# import re
 from bertopic import BERTopic
-import nltk
+# import nltk
 from nltk.corpus import stopwords
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-import seaborn as sns
-
-#Librerías para la autenticación 
-
+from google.oauth2 import service_account
 from google.oauth2.service_account import Credentials
 from google.cloud import bigquery
+from PIL import Image
+
+import nltk
+# import os
 
 
 # Descargar stopwords si no lo has hecho antes
